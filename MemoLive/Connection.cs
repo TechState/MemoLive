@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace MemoLive
 {
- public class User
+ public class Connection
     {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public int Age { get; set; }
     }
 }

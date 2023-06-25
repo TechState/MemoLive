@@ -38,60 +38,14 @@ namespace MemoLive
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // Получаем текст кнопки
-            string s = (string)((Button)e.OriginalSource).Content;
-            // Добавляем его в текстовое поле
-            textBlock.Text += s;
-            int num;
-            // Пытаемся преобразовать его в число
-            bool result = Int32.TryParse(s, out num);
-            // Если текст - это число
-            if (result == true)
-            {
-                // Если операция не задана
-                if (operation == "")
-                {
-                    // Добавляем к левому операнду
-                    leftop += s;
-                }
-                else
-                {
-                    // Иначе к правому операнду
-                    rightop += s;
-                }
-            }
-            // Если было введено не число
-            else
-            {
-                // Если равно, то выводим результат операции
-                if (s == "=")
-                {
-                    Update_RightOp();
-                    textBlock.Text += rightop;
-                    operation = "";
-                }
-                // Очищаем поле и переменные
-                else if (s == "CLEAR")
-                {
-                    leftop = "";
-                    rightop = "";
-                    operation = "";
-                    textBlock.Text = "";
-                }
-                // Получаем операцию
-                else
-                {
-                    // Если правый операнд уже имеется, то присваиваем его значение левому
-                    // операнду, а правый операнд очищаем
-                    if (rightop != "")
-                    {
-                        Update_RightOp();
-                        leftop = rightop;
-                        rightop = "";
-                    }
-                    operation = s;
-                }
-            }
+            ApplicationContext db = new ApplicationContext();
+
+            Person person1 = new Person{ id = 12, Name = "Алексей" };
+            Person person2= new Person{ id = 13, Name = "Киса" };
+
+            db.Persons.AddRange(person1);
+            db.SaveChanges();
+
 
         }
 
