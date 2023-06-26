@@ -31,45 +31,39 @@ namespace MemoLive
             {
                 if (c is Button)
                 {
-                    ((Button)c).Click += Button_Click;
+                    ((Button)c).Click += Button_Connect_Click;
                 }
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Connect_Click(object sender, RoutedEventArgs e)
         {
             ApplicationContext db = new ApplicationContext();
 
             Person person1 = new Person{ id = 12, Name = "Алексей" };
             Person person2= new Person{ id = 13, Name = "Киса" };
 
-            db.Persons.AddRange(person1);
+            db.Persons.AddRange(person1, person2);
             db.SaveChanges();
 
 
         }
 
-        private void Update_RightOp()
+        private void Query_Text_Changed(object sender, TextChangedEventArgs e)
         {
-            int num1 = Int32.Parse(leftop);
-            int num2 = Int32.Parse(rightop);
-            // И выполняем операцию
-            switch (operation)
-            {
-                case "+":
-                    rightop = (num1 + num2).ToString();
-                    break;
-                case "-":
-                    rightop = (num1 - num2).ToString();
-                    break;
-                case "*":
-                    rightop = (num1 * num2).ToString();
-                    break;
-                case "/":
-                    rightop = (num1 / num2).ToString();
-                    break;
-            }
+            //stack
         }
 
+    }
+
+    public class Phone
+    {
+        public string Name { get; set; }
+        public int Price { get; set; }
+
+        public override string ToString()
+        {
+            return $"Смартфон {this.Name}; цена: {this.Price}";
+        }
     }
 }
