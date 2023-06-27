@@ -20,9 +20,6 @@ namespace MemoLive
     /// </summary>
     public partial class MainWindow : Window
     {
-        string leftop = ""; // Левый операнд
-        string operation = ""; // Знак операции
-        string rightop = ""; // Правый операнд
         public MainWindow()
         {
             InitializeComponent();
@@ -34,6 +31,8 @@ namespace MemoLive
                     ((Button)c).Click += Button_Connect_Click;
                 }
             }
+
+            
         }
 
         private void Button_Connect_Click(object sender, RoutedEventArgs e)
@@ -43,8 +42,8 @@ namespace MemoLive
             Person person1 = new Person{ id = 12, Name = "Алексей" };
             Person person2= new Person{ id = 13, Name = "Киса" };
 
-            db.Persons.AddRange(person1, person2);
-            db.SaveChanges();
+            //db.Persons.AddRange(person1, person2);
+            //db.SaveChanges();
 
 
         }
@@ -54,16 +53,5 @@ namespace MemoLive
             //stack
         }
 
-    }
-
-    public class Phone
-    {
-        public string Name { get; set; }
-        public int Price { get; set; }
-
-        public override string ToString()
-        {
-            return $"Смартфон {this.Name}; цена: {this.Price}";
-        }
     }
 }

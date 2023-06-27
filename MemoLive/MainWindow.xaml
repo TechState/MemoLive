@@ -14,7 +14,7 @@
                     <TextBox BorderBrush="Black" HorizontalAlignment="Stretch" TextChanged="Query_Text_Changed" FontSize="14" FontFamily="Courier New" Height="40" Margin="0,10,0,0">
                        Type SQL query here
                     </TextBox>
-                    <TextBox FontFamily="Courier New" Height="40" BorderBrush="Black" Margin="0,10,0,0" FontSize="14">
+                    <TextBox x:Name="OutPut" FontFamily="Courier New" Height="40" BorderBrush="Black" Margin="0,10,0,0" FontSize="14">
                         Query result
                     </TextBox>
                 </StackPanel>
