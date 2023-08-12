@@ -20,13 +20,29 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="Конфигурация">
-                <Grid VerticalAlignment="Stretch" Background="#FFE5E5E5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="47*"/>
-                        <ColumnDefinition Width="95*"/>
-                        <ColumnDefinition Width="652*"/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Порт базы данных</Label>
+                        <TextBox HorizontalAlignment="Stretch">5432</TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Адрес хоста</Label>
+                        <TextBox>5432</TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Имя базы данных</Label>
+                        <TextBox>5432</TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Имя пользователя</Label>
+                        <TextBox>5432</TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Пароль</Label>
+                        <TextBox>5432</TextBox>
+                    </StackPanel>
+
+                </StackPanel>
             </TabItem>
         </TabControl>
     </StackPanel>

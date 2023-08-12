@@ -20,10 +20,10 @@ namespace MemoLive.db_service
             builder.AddJsonFile("config.json");
             var config = builder.Build();
 
-            cString =   "Host = "         +   config["dbHost"]        + 
+            cString =   "Host = "       +   config["dbHost"]        + 
                       "; Database = "   +   config["dbName"]        +
                       "; Password = "   +   config["uPassword"]     +
-                      "; Username = "   +   config["dbUser"]         +
+                      "; Username = "   +   config["dbUser"]        +
                       "; Port = "       +   config["dbPort"];
 
             MessageBox.Show(cString);
